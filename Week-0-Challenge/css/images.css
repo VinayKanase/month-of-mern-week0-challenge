@@ -1,0 +1,42 @@
+form {
+  height: 44px;
+  border-radius: 24px;
+}
+
+.center form:hover input {
+  background: #303134;
+  box-shadow: 0 1px 6px 0 #d3d1d15d;
+  border: 1px solid #5f6368;
+}
+.center input {
+  width: 46.4vw;
+  margin-right: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+.btn2 {
+  position: absolute;
+  height: 44px;
+  right: 50px;
+  padding: 0px 20px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border: 0;
+  cursor: pointer;
+  background-color: #202124;
+  border: 1px solid white;
+  border-left: none;
+  transition: all 0.3s ease-in-out;
+}
+
+form:hover .btn2 {
+  background: #303134;
+  box-shadow: 5px 1px 6px 0 #d3d1d15d;
+  border: 1px solid #5f6368;
+  border-left: none;
+}
+
+.btn-margin {
+  margin-top: 20px;
+}

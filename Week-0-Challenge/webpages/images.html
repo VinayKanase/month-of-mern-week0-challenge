@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Image Search</title>
-
-    <link rel="stylesheet" href="images.css">
-
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/images.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="../index.html" class="btn">Search</a>
+        </li>
+        <li>
+          <a href="./adv_search.html" class="btn">Advance Search</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="center">
+      <img
+        src="../assets/google-imagesLogo.png"
+        alt="Google Images"
+        class="banner"
+      />
+      <form class="form">
+        <label class="search-label" for="search">
+          <span class="search"></span>
+          <input type="search" name="q" id="search" autocomplete="on" />
+        </label>
+        <button id="searchBtn" class="btn2" type="submit">
+          <span class="search"></span>
+        </button>
+      </form>
+      <button id="submit" class="btn btn-margin" type="submit">
+        Google Images Search
+      </button>
+    </div>
     <script type="text/javascript">
+      let inputQuery = document.querySelector("#search");
 
+      searchQuery = (e) => {
+        e.preventDefault();
+        let url = `https://www.google.co.in/search?tbm=isch&q=${inputQuery.value}`;
+        let link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.click();
+        inputQuery.value = "";
+      };
+      document.getElementById("submit").addEventListener("click", searchQuery);
+      document
+        .getElementById("searchBtn")
+        .addEventListener("click", searchQuery);
     </script>
-</body>
+  </body>
 </html>

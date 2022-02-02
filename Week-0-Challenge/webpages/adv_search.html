@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Advanced Search</title>
-
-    <link rel="stylesheet" href="adv_search.css">
-
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/adv_search.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="logo">
+        <img src="../assets/google_PNG.png" alt="Google" />
+      </div>
+      <ul>
+        <li>
+          <a href="../index.html" class="btn">Search</a>
+        </li>
+        <li>
+          <a href="./images.html" class="btn">Images</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="center container">
+      <h2>Advanced Search</h2>
+      <form class="searchWrapper">
+        <label for="all">
+          <span>all these words:</span>
+          <input type="search" id="all" />
+        </label>
+        <label for="all-exact">
+          <span>this exact word or phrase</span>
+          <input type="search" id="all-exact" />
+        </label>
+        <label for="any">
+          <span>any of these words:</span>
+          <input type="search" id="any" />
+        </label>
+        <label for="none">
+          <span>none of these words:</span>
+          <input type="search" id="none" />
+        </label>
+      </form>
+      <div>
+        <button id="submit" class="btn align-right">Advance Search</button>
+      </div>
+    </div>
     <script type="text/javascript">
-
+      let url = "https://www.google.com/search?";
+      document.getElementById("submit").addEventListener("click", () => {
+        url += `as_q=${document.getElementById("all").value}&as_epq=${
+          document.getElementById("all-exact").value
+        }&as_oq=${document.getElementById("any").value}&as_eq=${
+          document.getElementById("none").value
+        }`;
+        let a = document.createElement("a");
+        a.setAttribute("href", url);
+        a.click();
+      });
     </script>
-</body>
+  </body>
 </html>
